@@ -1,0 +1,55 @@
+This is a classification framework written originally for testing the performance of Inception-based models on a cars dataset.
+I later repurposed it for a sketch classification task for my dissertation project
+(and it went on to form the barebones of my WarpingModel framework, to be found at https://github.com/jwb37/WarpingModel)
+
+
+Pre-requisites
+--------------
+    Python 3.x (I shall assume below the command is python, not python3)
+    Pytorch
+    torchvision
+    Scikit Learn (for the metrics package)
+    Pillow
+    Matplotlib (only required running for utils/plot_training_record.py)
+
+
+Instructions
+------------
+Sets of parameters are stored in the 'params' folder as Python files.
+Format should be straightforward to read. Copy and customize as you wish to create your own sets of training parameters
+
+
+Training
+--------
+From the base directory, run the command:
+    python train.py PARAM_FILE
+where PARAM_FILE is the raw filename of a parameter file from the 'params' subfolder (without any path, and without the '.py' extension)
+
+e.g.
+    python train.py VGGSketchy
+
+
+Testing
+-------
+From the base directory, run the command:
+    python test.py PARAM_FILE
+where PARAM_FILE is as described above under 'Training'
+
+
+Plotting Training Records
+-------------------------
+From within the 'utils' folder, run:
+    python plot_training_record.py
+Note that this file has a hard-coded list of models that it expects to have already been trained (the tuple named 'plots' at the end of the file), and this should be edited to suit the model names that you have trained.
+
+
+Training the Sketch Classification Task
+---------------------------------------
+Download the Sketchy dataset. Copy all folders from sketch/tx_000000000000 into imgs/Sketchy/
+From the base directory, run the command:
+    python train.py VGGSketchy
+
+
+References/Acknowledgements
+---------------------------
+Squeeze-and-Excitation layer based on code by Diganta Misra accessed at url https://blog.paperspace.com/channel-attention-squeeze-and-excitation-networks/
