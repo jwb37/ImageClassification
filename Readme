@@ -47,6 +47,9 @@ Training the Sketch Classification Task
 ---------------------------------------
 Download the Sketchy dataset from http://sketchy.eye.gatech.edu/
 Copy all folders from sketch/tx_000000000000 into imgs/Sketchy/
+From inside the imgs directory, run the command:
+    python split.py Sketchy
+(Note that you will need to be using a filesystem which supports symlinks)
 From the base directory, run the command:
     python train.py VGGSketchy
 
