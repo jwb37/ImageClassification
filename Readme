@@ -45,7 +45,8 @@ Note that this file has a hard-coded list of models that it expects to have alre
 
 Training the Sketch Classification Task
 ---------------------------------------
-Download the Sketchy dataset. Copy all folders from sketch/tx_000000000000 into imgs/Sketchy/
+Download the Sketchy dataset from http://sketchy.eye.gatech.edu/
+Copy all folders from sketch/tx_000000000000 into imgs/Sketchy/
 From the base directory, run the command:
     python train.py VGGSketchy
 
